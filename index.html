@@ -1,21 +1,26 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Online Music Store</title>
     <link rel="stylesheet" href="main.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.2/dist/chart.umd.min.js"></script>
 </head>
 <body>
+
+<!-- midten af hjemmesiden -->
 <header>
     <h1>Online Music Store</h1>
     <nav>
         <a href="#">Albums</a>
         <a href="#">Artists</a>
         <a href="#">Tracks</a>
-        <a href="#">Customers</a>
     </nav>
+
+    <a href="#" class="login-btn">Log in</a>
 </header>
+
 
 <section class="search-section">
     <label for="search">Search:</label>
@@ -24,69 +29,100 @@
 </section>
 
 <main>
-
-    <section class="content-box">
-        <h2>Albums</h2>
-        <p>Her skal der senere vises album data fra databasen.</p>
+    <!-- 1. Top 4 genres -->
+    <section class="content-row">
+        <div class="text">
+            <p>Not sure what kind of music you like? Well! Look no further. Here you can see which genres contains the most music.</p>
+        </div>
+        <div class="content-box" id="chartGenres">
+            <canvas id="chart1"></canvas>
+        </div>
     </section>
 
-    <section class="content-box">
-        <h2>Artists</h2>
-        <p>Her skal der senere vises artist data fra databasen.</p>
+    <!-- 2. Top 3 bands -->
+    <section class="content-row reverse">
+        <div class="text">
+            <p>Discover the bands that never stop creating! Dive into the artists with the biggest music collections and find your next favorite song.</p>
+        </div>
+        <div class="content-box" id="chartBands">
+            <canvas id="chart2"></canvas>
+        </div>
     </section>
 
-    <section class="content-box">
-        <h2>Tracks</h2>
-        <p>Her skal der senere vises track data fra databasen.</p>
+    <!-- 3. Top 5 albums -->
+    <section class="content-row">
+        <div class="text">
+            <p>Looking for something you can truly get lost in? These albums offer long, rich journeys through sound, perfect for deep listening and relaxing moments.</p>
+        </div>
+        <div class="content-box" id="chartAlbums">
+            <canvas id="chart3"></canvas>
+        </div>
     </section>
+
+    <!-- 4. Top 4 rock artists -->
+    <section class="content-row reverse">
+        <div class="text">
+            <p>Feel the power of rock! Meet the artists who’ve written more songs, played louder riffs, and poured their passion into every note.</p>
+        </div>
+        <div class="content-box" id="chartRock">
+            <canvas id="chart4"></canvas>
+        </div>
+    </section>
+
+
+    <p id="textHere">Not sure what to listen to? Click the button below and get a random song suggestion just for you!</p>
+
+    <div class="container">
+        <p class="textHere">Click below to get a random song recommendation!</p>
+        <button id="songButton" class="RandomSong">🎵 Click me 🎵</button>
+    </div>
 
 </main>
 
 
-<footer>
-    <!-- FOOTER INFO-SEKTION -->
-    <footer class="info-footer">
-        <div class="footer-container">
+<footer class="info-footer">
+    <div class="footer-container">
 
-            <!-- KOLONNE 1 = Om Musikbutikken -->
-            <div class="footer-column">
-                <h4>Om Online Music Store</h4>
-                <ul>
-                    <li><a href="#">About the company</a></li>
-                    <li><a href="#">What we do</a></li>
-                    <li><a href="#">Partners</a></li>
-                    <li><a href="#">Music selection</a></li>
-                    <li><a href="#">Terms & conditions</a></li>
-                </ul>
-            </div>
-
-            <!-- KOLONNE 2 = Kontakt -->
-            <div class="footer-column">
-                <h4>Kontakt</h4>
-                <ul>
-                    <li><a href="#">Customer Service</a></li>
-                    <li><a href="#">Email</a></li>
-                    <li><a href="#">Live Chat</a></li>
-                    <li><a href="#">Business Inquiries</a></li>
-                </ul>
-            </div>
-
-            <!-- KOLONNE 3 = Data og Kategorier -->
-            <div class="footer-column">
-                <h4>Udforsk Musik</h4>
-                <ul>
-                    <li><a href="#">Artists</a></li>
-                    <li><a href="#">Albums</a></li>
-                    <li><a href="#">Genres</a></li>
-                    <li><a href="#">Playlists</a></li>
-                </ul>
-            </div>
-
+        <!-- KOLONNE 1 Om Musikbutikken -->
+        <div class="footer-column">
+            <h4>Om Online Music Store</h4>
+            <ul>
+                <li><a href="#">About the company</a></li>
+                <li><a href="#">What we do</a></li>
+                <li><a href="#">Partners</a></li>
+                <li><a href="#">Music selection</a></li>
+                <li><a href="#">Terms & conditions</a></li>
+            </ul>
         </div>
-    </footer>
+
+        <!-- KOLONNE 2 Kontakt -->
+        <div class="footer-column">
+            <h4>Kontakt</h4>
+            <ul>
+                <li><a href="#">Customer Service</a></li>
+                <li><a href="#">Email</a></li>
+                <li><a href="#">Live Chat</a></li>
+                <li><a href="#">Business Inquiries</a></li>
+            </ul>
+        </div>
+
+        <!-- KOLONNE 3  Data og Kategorier -->
+        <div class="footer-column">
+            <h4>Udforsk Musik</h4>
+            <ul>
+                <li><a href="#">Artists</a></li>
+                <li><a href="#">Albums</a></li>
+                <li><a href="#">Genres</a></li>
+                <li><a href="#">Playlists</a></li>
+            </ul>
+        </div>
+
+    </div>
 
     <p>© 2025 Online Music Store | Chinook Database Project</p>
 </footer>
+
+<script src="chart.js"></script>
 
 </body>
 </html>
